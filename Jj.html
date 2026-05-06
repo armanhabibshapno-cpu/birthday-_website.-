@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories of Love</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #ff6b9d;
+            --secondary: #c44569;
+            --light: #fff5f7;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(to bottom, var(--light), #fff);
+            color: #2d3436;
+            line-height: 1.6;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            font-size: 0.85rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2d3436;
+            font-weight: 600;
+        }
+        .categories-page {
+            padding: 6rem 1.5rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .categories-page h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .category-card:hover {
+            transform: translateY(-8px);
+        }
+        .category-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b9d, #f8b500);
+        }
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .category-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .category-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .category-count {
+            display: inline-block;
+            background: var(--light);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            margin-top: 2rem;
+        }
+        .footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links { gap: 0.5rem; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">💝 Our Love</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="letter.html">Letter</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="all-reasons.html">All 100</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="final.html">Forever</a></li>
+        </ul>
+    </nav>
+    <section class="categories-page">
+        <h2>Chapters of My Love</h2>
+        <p class="section-desc">100 reasons, organized by what makes them special</p>
+        <div class="category-grid">
+            <a href="all-reasons.html" class="category-card">
+                <div class="category-icon">🌟</div>
+                <h3>Your Beautiful Soul</h3>
+                <p>The essence of who you are — your smile, your laugh, your eyes, your energy.</p>
+                <span class="category-count">Reasons 1-22</span>
+            </a>
+            <a href="all-reasons.html" class="category-card">
+                <div class="category-icon">💖</div>
+                <h3>Your Heart of Gold</h3>
+                <p>Your kindness, courage, honesty, loyalty, warmth, and the beautiful way you treat everyone.</p>
+                <span class="category-count">Reasons 23-44</span>
+            </a>
+            <a href="all-reasons.html" class="category-card">
+                <div class="category-icon">💑</div>
+                <h3>The Way You Love Me</h3>
+                <p>How you brighten my world, trust me, believe in me, and make every moment magical.</p>
+                <span class="category-count">Reasons 45-69</span>
+            </a>
+            <a href="all-reasons.html" class="category-card">
+                <div class="category-icon">✨</div>
+                <h3>Your Magic</h3>
+                <p>The little things — your dramatic entrances, your teasing smile, your chaos, your charm.</p>
+                <span class="category-count">Reasons 70-85</span>
+            </a>
+            <a href="all-reasons.html" class="category-card">
+                <div class="category-icon">🌹</div>
+                <h3>Forever & Always</h3>
+                <p>The deepest reasons — your dreams, your future, the way you understand me and love me.</p>
+                <span class="category-count">Reasons 86-100</span>
+            </a>
+            <a href="all-reasons.html" class="category-card" style="background: linear-gradient(135deg, #ff6b9d, #c44569); color: white;">
+                <div class="category-icon">📖</div>
+                <h3 style="color: white;">Read All 100</h3>
+                <p style="color: rgba(255,255,255,0.9);">See the complete list with filtering options.</p>
+                <span class="category-count" style="background: rgba(255,255,255,0.2); color: white;">Full List →</span>
+            </a>
+        </div>
+        <div style="text-align: center;">
+            <a href="all-reasons.html" class="btn">View All 100 Reasons →</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Made with 💝 for the love of my life</p>
+    </footer>
+</body>
+</html>
