@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All 100 Reasons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #ff6b9d;
+            --secondary: #c44569;
+            --light: #fff5f7;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--light);
+            color: #2d3436;
+            line-height: 1.6;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            font-size: 0.85rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2d3436;
+            font-weight: 600;
+        }
+        .all-reasons-page {
+            padding: 6rem 1.5rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .all-reasons-page h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.2rem;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .reason-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid var(--primary);
+        }
+        .reason-card:hover {
+            transform: translateY(-4px);
+        }
+        .reason-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: 8px;
+            right: 12px;
+        }
+        .reason-text {
+            font-size: 1rem;
+            padding-right: 2rem;
+        }
+        .reason-emoji {
+            margin-right: 0.5rem;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            margin-top: 2rem;
+        }
+        .footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links { gap: 0.5rem; font-size: 0.75rem; }
+            .filter-btn { padding: 0.4rem 1rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">💝 Our Love</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="letter.html">Letter</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="all-reasons.html">All 100</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="final.html">Forever</a></li>
+        </ul>
+    </nav>
+    <section class="all-reasons-page">
+        <h2>100 Reasons Why I Love You</h2>
+        <p class="section-desc">Click a filter to see reasons by category</p>
+        <div class="filter-tabs">
+            <button class="filter-btn active" onclick="filterReasons('all')">All 100</button>
+            <button class="filter-btn" onclick="filterReasons('soul')">Beautiful Soul</button>
+            <button class="filter-btn" onclick="filterReasons('heart')">Heart of Gold</button>
+            <button class="filter-btn" onclick="filterReasons('us')">The Way You Love Me</button>
+            <button class="filter-btn" onclick="filterReasons('magic')">Your Magic</button>
+            <button class="filter-btn" onclick="filterReasons('forever')">Forever</button>
+        </div>
+        <div class="reasons-grid" id="reasonsGrid"></div>
+        <div style="text-align: center;">
+            <a href="memories.html" class="btn">Our Memories →</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Made with 💝 for the love of my life</p>
+    </footer>
+    <script>
+        const reasons = [
+            {text: "Your smile", cat: "soul", emoji: "💖"},
+            {text: "Your laugh", cat: "soul", emoji: "✨"},
+            {text: "Your amber eyes", cat: "soul", emoji: "🌸"},
+            {text: "Your endless energy", cat: "soul", emoji: "🌟"},
+            {text: "Your confidence", cat: "soul", emoji: "💫"},
+            {text: "Your stubbornness", cat: "soul", emoji: "🦋"},
+            {text: "Your honesty", cat: "heart", emoji: "🌹"},
+            {text: "Your kindness", cat: "heart", emoji: "💕"},
+            {text: "Your dramatic plans", cat: "magic", emoji: "🎀"},
+            {text: "Your imagination", cat: "magic", emoji: "🌺"},
+            {text: "Your ridiculous plans", cat: "magic", emoji: "💗"},
+            {text: "Your courage", cat: "heart", emoji: "🌷"},
+            {text: "Your optimism", cat: "heart", emoji: "⭐"},
+            {text: "Your warmth", cat: "heart", emoji: "🍀"},
+            {text: "Your voice", cat: "soul", emoji: "🌻"},
+            {text: "The way you say my name", cat: "us", emoji: "💝"},
+            {text: "Your determination", cat: "heart", emoji: "🌼"},
+            {text: "Your sincerity", cat: "heart", emoji: "🌈"},
+            {text: "Your loyalty", cat: "heart", emoji: "💘"},
+            {text: "Your innocence", cat: "soul", emoji: "🌙"},
+            {text: "Your mischief", cat: "magic", emoji: "💖"},
+            {text: "Your unpredictability", cat: "magic", emoji: "✨"},
+            {text: "Your passion", cat: "heart", emoji: "🌸"},
+            {text: "Your enthusiasm", cat: "soul", emoji: "🌟"},
+            {text: "Your softness", cat: "soul", emoji: "💫"},
+            {text: "Your strength", cat: "heart", emoji: "🦋"},
+            {text: "Your persistence", cat: "heart", emoji: "🌹"},
+            {text: "Your empathy", cat: "heart", emoji: "💕"},
+            {text: "Your clumsiness", cat: "magic", emoji: "🎀"},
+            {text: "Your grace", cat: "soul", emoji: "🌺"},
+            {text: "Your intelligence", cat: "soul", emoji: "💗"},
+            {text: "Your curiosity", cat: "soul", emoji: "🌷"},
+            {text: "Your stubborn hope", cat: "heart", emoji: "⭐"},
+            {text: "Your selflessness", cat: "heart", emoji: "🍀"},
+            {text: "Your boldness", cat: "heart", emoji: "🌻"},
+            {text: "Your elegance", cat: "soul", emoji: "💝"},
+            {text: "Your sweetness", cat: "soul", emoji: "🌼"},
+            {text: "Your resilience", cat: "heart", emoji: "🌈"},
+            {text: "Your trust in me", cat: "us", emoji: "💘"},
+            {text: "Your faith in me", cat: "us", emoji: "🌙"},
+            {text: "The way you brighten the room", cat: "us", emoji: "💖"},
+            {text: "Your ability to make me react", cat: "us", emoji: "✨"},
+            {text: "Your refusal to give up", cat: "heart", emoji: "🌸"},
+            {text: "Your sense of duty", cat: "heart", emoji: "🌟"},
+            {text: "Your belief in fate", cat: "magic", emoji: "💫"},
+            {text: "Your dramatic entrances", cat: "magic", emoji: "🦋"},
+            {text: "Your dramatic exits", cat: "magic", emoji: "🌹"},
+            {text: "Your little pout", cat: "magic", emoji: "💕"},
+            {text: "Your teasing smile", cat: "magic", emoji: "🎀"},
+            {text: "Your rare moments of silence", cat: "magic", emoji: "🌺"},
+            {text: "Your laugh when you're proud of yourself", cat: "soul", emoji: "💗"},
+            {text: "Your excitement over little things", cat: "magic", emoji: "🌷"},
+            {text: "Your protective side", cat: "us", emoji: "⭐"},
+            {text: "Your caring nature", cat: "heart", emoji: "🍀"},
+            {text: "Your habit of dragging me along", cat: "us", emoji: "🌻"},
+            {text: "Your confidence in your villainess act", cat: "magic", emoji: "💝"},
+            {text: "Your sincerity even in nonsense", cat: "heart", emoji: "🌼"},
+            {text: "Your courage in fear", cat: "heart", emoji: "🌈"},
+            {text: "Your refusal to be broken", cat: "heart", emoji: "💘"},
+            {text: "Your ability to surprise me", cat: "magic", emoji: "🌙"},
+            {text: "Your endless devotion", cat: "us", emoji: "💖"},
+            {text: "Your patience", cat: "heart", emoji: "✨"},
+            {text: "Your forgiveness", cat: "heart", emoji: "🌸"},
+            {text: "Your tenderness", cat: "us", emoji: "🌟"},
+            {text: "Your playful nature", cat: "magic", emoji: "💫"},
+            {text: "Your ability to make me stay", cat: "us", emoji: "🦋"},
+            {text: "Your honesty about what you want", cat: "heart", emoji: "🌹"},
+            {text: "Your ability to see good in me", cat: "us", emoji: "💕"},
+            {text: "Your stubborn loyalty", cat: "us", emoji: "🎀"},
+            {text: "The way you stand beside me", cat: "us", emoji: "🌺"},
+            {text: "Your unshaken trust", cat: "us", emoji: "💗"},
+            {text: "Your bright spirit", cat: "soul", emoji: "🌷"},
+            {text: "Your chaotic charm", cat: "magic", emoji: "⭐"},
+            {text: "Your habit of making everything interesting", cat: "magic", emoji: "🍀"},
+            {text: "Your presence", cat: "us", emoji: "🌻"},
+            {text: "How noticeable your absence is", cat: "us", emoji: "💝"},
+            {text: "Your influence on me", cat: "us", emoji: "🌼"},
+            {text: "Your ability to make me care", cat: "us", emoji: "🌈"},
+            {text: "Your determination to protect others", cat: "heart", emoji: "💘"},
+            {text: "Your emotional honesty", cat: "heart", emoji: "🌙"},
+            {text: "Your bravery", cat: "heart", emoji: "💖"},
+            {text: "Your innocence in love", cat: "forever", emoji: "✨"},
+            {text: "Your refusal to hate", cat: "heart", emoji: "🌸"},
+            {text: "Your ability to forgive", cat: "heart", emoji: "🌟"},
+            {text: "Your happiness", cat: "soul", emoji: "💫"},
+            {text: "Your earnestness", cat: "heart", emoji: "🦋"},
+            {text: "Your optimism", cat: "heart", emoji: "🌹"},
+            {text: "Your loyalty to those you love", cat: "heart", emoji: "💕"},
+            {text: "Your smile directed at me", cat: "us", emoji: "🎀"},
+            {text: "Your laughter because of me", cat: "us", emoji: "🌺"},
+            {text: "Your tears that I want to stop", cat: "forever", emoji: "💗"},
+            {text: "Your fears I want to ease", cat: "forever", emoji: "🌷"},
+            {text: "Your dreams", cat: "forever", emoji: "⭐"},
+            {text: "Your future", cat: "forever", emoji: "🍀"},
+            {text: "Your nonsense", cat: "magic", emoji: "🌻"},
+            {text: "The way you change me", cat: "forever", emoji: "💝"},
+            {text: "The way you understand me", cat: "forever", emoji: "🌼"},
+            {text: "The way you stay", cat: "forever", emoji: "🌈"},
+            {text: "The way you love", cat: "forever", emoji: "💘"},
+            {text: "You being yourself", cat: "forever", emoji: "🌙"}
+        ];
+
+        function renderReasons(filter) {
+            const grid = document.getElementById('reasonsGrid');
+            grid.innerHTML = '';
+            const filtered = filter === 'all' ? reasons : reasons.filter(r => r.cat === filter);
+            filtered.forEach((reason, idx) => {
+                const card = document.createElement('div');
+                card.className = 'reason-card';
+                card.innerHTML = `
+                    <span class="reason-number">${reasons.indexOf(reason) + 1}</span>
+                    <span class="reason-emoji">${reason.emoji}</span>
+                    <span class="reason-text">${reason.text}</span>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterReasons(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderReasons(category);
+        }
+
+        renderReasons('all');
+    </script>
+</body>
+</html>
