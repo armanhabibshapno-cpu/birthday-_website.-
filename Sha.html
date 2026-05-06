@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever & Always</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #ff6b9d;
+            --secondary: #c44569;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            font-size: 0.85rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2d3436;
+            font-weight: 600;
+        }
+        .final-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 2rem;
+        }
+        .final-page h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            margin-bottom: 2rem;
+        }
+        .final-message {
+            max-width: 600px;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        .heart-animation {
+            font-size: 5rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            margin: 1rem 0;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .signature-final {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            margin-top: 2rem;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid white;
+            color: white;
+            margin-top: 2rem;
+        }
+        .footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links { gap: 0.5rem; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">💝 Our Love</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="letter.html">Letter</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="all-reasons.html">All 100</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="final.html">Forever</a></li>
+        </ul>
+    </nav>
+    <section class="final-page">
+        <div class="heart-animation">💖</div>
+        <h2>You Are My Everything</h2>
+        <div class="final-message">
+            <p>These 100 reasons are just the beginning. Every single day, I find something new to love about you.</p>
+            <p>You make my world brighter. My heart fuller. My life complete.</p>
+            <p>Thank you for being you — perfectly, beautifully, unapologetically you.</p>
+            <p>Happy Birthday to the love of my life. 🌹</p>
+        </div>
+        <div class="heart-animation">💝</div>
+        <div class="signature-final">Forever Yours</div>
+        <div>
+            <a href="index.html" class="btn">← Back to Home</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Made with 💝 for the love of my life | Happy Birthday</p>
+    </footer>
+</body>
+</html>
