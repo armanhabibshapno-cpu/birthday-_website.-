@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Letter to You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #ff6b9d;
+            --secondary: #c44569;
+            --light: #fff5f7;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--light);
+            color: #2d3436;
+            line-height: 1.6;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            font-size: 0.85rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2d3436;
+            font-weight: 600;
+        }
+        .intro-page {
+            padding: 6rem 1.5rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .intro-page h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .letter-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            margin-top: 2rem;
+        }
+        .letter-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
+        }
+        .letter-text p {
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            margin-top: 2rem;
+        }
+        .footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .letter-container { padding: 1.5rem; }
+            .nav-links { gap: 0.5rem; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">💝 Our Love</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="letter.html">Letter</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="all-reasons.html">All 100</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="final.html">Forever</a></li>
+        </ul>
+    </nav>
+    <section class="intro-page">
+        <h2>My Letter to You 💌</h2>
+        <div class="letter-container">
+            <div class="letter-text">
+                <p>My Dearest Love,</p>
+                <p>As I sit down to write this, I realize that 100 reasons could never truly capture everything you mean to me. But I wanted to try anyway — because you deserve to know exactly how deeply you've touched my heart.</p>
+                <p>From the way your eyes light up when you're excited, to how you stand by me even when things get tough. From your ridiculous plans that somehow always work out, to your stubborn hope that refuses to let go even in the darkest moments. Every piece of you is something I've fallen in love with.</p>
+                <p>I've organized these 100 reasons into different chapters — your personality, your heart, the way you love me, and simply... the magic of you being yourself. Each one is a piece of the puzzle that makes you the most incredible person I know.</p>
+                <p>On your birthday, I don't just want to celebrate another year of your life. I want to celebrate every single thing that makes you <em>you</em>. Because without you, my world would be infinitely less bright.</p>
+                <p>So here they are — 100 reasons, 100 truths, 100 little pieces of my heart laid bare for you to see. I hope as you read them, you feel even a fraction of the love I feel for you every single day.</p>
+                <p>Happy Birthday, my love. Here's to a hundred more reasons, a hundred more years, and a love that keeps growing.</p>
+                <p style="text-align: right; font-style: italic; margin-top: 2rem;">Forever Yours,<br>With All My Heart 💝</p>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="categories.html" class="btn">Continue to Categories →</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Made with 💝 for the love of my life</p>
+    </footer>
+</body>
+</html>
